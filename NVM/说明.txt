@@ -1,0 +1,13 @@
+﻿node.exe
+
+if a == "32" {
+    url = "http://nodejs.org/dist/v"+v+"/node.exe"
+  } else {
+    if !IsNode64bitAvailable(v) {
+      fmt.Println("Node.js v"+v+" is only available in 32-bit.")
+      return false
+    }
+    url = "http://nodejs.org/dist/v"+v+"/x64/node.exe"
+
+npm
+url := "https://github.com/npm/npm/archive/v"+v+".zip"
