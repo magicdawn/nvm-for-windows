@@ -40,27 +40,37 @@ namespace NVM.Commands
                 return;
             }
 
-            // use 某一版本
-            var path = Environment.GetEnvironmentVariable("PATH",EnvironmentVariableTarget.Machine);
-            var pattern = AppDomain.CurrentDomain.BaseDirectory.Replace(@"\",@"\\") + @"(v[\d.]+)";
-            var m = Regex.Match(path,pattern);
-
-            if(m != null && m.Groups[1].Value == ver) // don't need to switch
+            // 是否是相同版本
+            var currentVersion = Util.GetCurrentVer();
+            if(ver == currentVersion) // don't need to switch
             {
                 ConsoleX.Warn(I18n.Get.UsingThisVersion_NoNeedToSwitch,ver);
                 return;
             }
 
-            // 切换至ver
-            if(m == null) // 不包含 node.exe 目录
+            // use 某一版本
+            var path = Util.Path;
+            var root = AppDomain.CurrentDomain.BaseDirectory;
+
+            if(currentVersion != null) // 包含一个版本
             {
+                var paths = path.Split(';');
+                for(int i = 0;i < path.Length;i++)
+                {
+                    if(paths[i].StartsWith(root + "v"))
+                    {
+                        paths[i] = dir; // path[i] 原来 version , dir new version , 替换掉
+                        break;
+                    }
+                }
+                path = string.Join(";",paths);
+            }
+            else // 不包含,直接append
+            { 
                 path = dir + ";" + path; // 将 dir append至path
             }
-            else // 已经包含,替换
-            {
-                path = path.Replace(m.Value,dir);
-            }
-            Environment.SetEnvironmentVariable("PATH",path,EnvironmentVariableTarget.Machine);
+
+            Util.Path = path; // 设置PATH
             ConsoleX.Success(I18n.Get.SucceedSwitchingVersion,ver);
         }
     }

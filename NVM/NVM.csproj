@@ -31,6 +31,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationIcon>node.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Ionic.Zip">
       <HintPath>..\packages\DotNetZip.1.9.3\lib\net20\Ionic.Zip.dll</HintPath>
@@ -55,6 +59,7 @@
     <Compile Include="Commands\Uninstall.cs" />
     <Compile Include="Commands\Unsetup.cs" />
     <Compile Include="Commands\Use.cs" />
+    <Compile Include="Commands\Version.cs" />
     <Compile Include="I18n.cs" />
     <Compile Include="Languages\English.cs" />
     <Compile Include="Languages\SimplifiedChinese.cs" />
@@ -63,6 +68,7 @@
     <Compile Include="Util.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="node.ico" />
     <Content Include="说明.txt" />
   </ItemGroup>
   <ItemGroup>

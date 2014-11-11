@@ -18,6 +18,7 @@ namespace NVM.Languages
 
             this.Setup_HelpMsg = "add nvm.exe to PATH environment variable";
             this.Unsetup_HelpMsg = "remove nvm.exe from PATH environment variable";
+            this.Version_HelpMsg = "check the version of nvm.exe";
 
             // install
             this.MustSpecifyVersion = "must specify a version !";

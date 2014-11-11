@@ -27,6 +27,7 @@ namespace NVM.Languages
             this.DownloadSucceed = "下载成功";
             this.InstalledSucceed = "安装成功";
             this.UseUseToSwitch = "  使用 `nvm use <ver>` 切换到 {0}";
+            this.Version_HelpMsg = "查看nvm.exe 版本号";
 
             // list
             this.InstalledVersions = "已安装版本 :";

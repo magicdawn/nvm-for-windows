@@ -9,6 +9,22 @@ namespace NVM
 {
     public class Util
     {
+        // change version here
+        public const string Version = "0.0.2";
+
+        // delegate PATH actions to `Util.Path` property
+        public static string Path
+        {
+            get
+            {
+                return Environment.GetEnvironmentVariable("PATH",EnvironmentVariableTarget.Machine);
+            }
+            set
+            {
+                Environment.SetEnvironmentVariable("PATH",value,EnvironmentVariableTarget.Machine);
+            }
+        }
+
         public static string EnsureVer(string ver)
         {
             if(ver[0] != 'v')
@@ -26,19 +42,24 @@ namespace NVM
             return ver;
         }
 
-
         public static string GetCurrentVer()
         {
             var path = Environment.GetEnvironmentVariable("PATH",EnvironmentVariableTarget.Machine);
-            var pattern = AppDomain.CurrentDomain.BaseDirectory.Replace(@"\",@"\\") + @"(v[\d.]+)";
-            var m = Regex.Match(path,pattern);
+            var dir = AppDomain.CurrentDomain.BaseDirectory; // ends with \
 
-            if(m == null)
+            foreach(var p in path.Split(';'))
             {
-                return null;
+                if(p.StartsWith(dir + "v",StringComparison.OrdinalIgnoreCase)) // /v0.10.33/node.exe
+                {
+                    var ver = p.Substring(dir.Length); // v0.10.33
+                    if(!string.IsNullOrWhiteSpace(ver))
+                    {
+                        return ver;
+                    }
+                }
             }
 
-            return m.Groups[1].Value;
+            return null;
         }
-    }    
+    }
 }

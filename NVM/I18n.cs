@@ -30,6 +30,7 @@ namespace NVM
         public string Uninstall_HelpMsg;
         public string Unsetup_HelpMsg;
         public string Use_HelpMsg;
+        public string Version_HelpMsg;
 
         // install
         public string MustSpecifyVersion;

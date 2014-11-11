@@ -22,7 +22,9 @@ namespace NVM
         public static Dictionary<string,string> AliasMap = new Dictionary<string,string>() { 
             { "i","install" },
             { "un" ,"uninstall"},
-            { "ls","list" }
+            { "ls","list" },
+            { "v","version" },
+            { "ver","version"}
         };
 
         // dispatch command
