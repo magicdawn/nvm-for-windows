@@ -3,12 +3,10 @@ Implement with C#,requires .NET Framework v4.0
 
 [中文介绍](#中文介绍)
 
-
-#### Important !
-#### restart your console(cmd.exe) after run `nvm use`
+## Download
+[Download Latest Release](https://github.com/magicdawn/nvm-for-windows/archive/v0.0.2.zip)
 
 ## Install
-1. download a release zip file
 2. unzip this file,ensure 3 files :
 	- `Magicdawn.dll`
 	- `NVM.exe`
@@ -16,16 +14,12 @@ Implement with C#,requires .NET Framework v4.0
 3. open `cmd.exe` , switch this directory,run `nvm setup`
 
 ## Usage
-
 1. install : install new version
 2. use : switch specified version
 
 ## Screenshot
 ![](en.png)
 
-## Alternates
-- [nvm-windows](https://github.com/coreybutler/nvm-windows)
-- [nvmw](https://github.com/hakobera/nvmw)
 
 ## License
 The MIT License (MIT)
@@ -36,12 +30,11 @@ Copyright (c) 2014 Magicdawn<<784876393@qq.com>>
 # 中文介绍
 中文介绍哈,为什么再造一个呢...因为C#是win上最好的语言,不服来辩呀!!!!
 
-#### 注意
-#### 切换版本nvm use 之后要重启命令行,因为这个nvm直接改的PATH环境变量!
+## 下载
+[下载最新版](https://github.com/magicdawn/nvm-for-windows/archive/v0.0.2.zip)
 
 ## 安装
-1. 下载release zip 文件
-2. 解压,确保包含下面三个文件:
+2. 下载解压,确保包含下面三个文件:
 	- `Magicdawn.dll`
 	- `NVM.exe`
 	- `Ionic.Zip.dll`
@@ -53,10 +46,6 @@ Copyright (c) 2014 Magicdawn<<784876393@qq.com>>
 
 ## 截图
 ![](cn.png)
-
-## 其他
-- [nvm-windows](https://github.com/coreybutler/nvm-windows)
-- [nvmw](https://github.com/hakobera/nvmw)
 
 ## 软件许可
 MIT license
